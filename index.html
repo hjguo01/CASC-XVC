@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文音频结果展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .abstract {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .table-container {
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .audio-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        audio {
+            width: 48%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Demo Page</h1>
+
+    <div class="abstract">
+        <h2>Abstract</h2>
+        <p>本页面展示了论文中的音频转换结果，包括中文转英文、英文转中文、中文转中文以及英文转英文的实验结果。每个表格展示了四个样本，表格上方提供了源音频和目标音频的播放功能。</p>
+    </div>
+
+    <div class="table-container">
+        <h2>中文转英文</h2>
+        <div class="audio-container">
+            <audio controls>
+                <source src="source_audio_zh_to_en.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <audio controls>
+                <source src="target_audio_zh_to_en.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+        <table>
+            <tr>
+                <th>样本1</th>
+                <th>样本2</th>
+                <th>样本3</th>
+                <th>样本4</th>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="zh_to_en_1.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_en_2.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_en_3.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_en_4.mp3" type="audio/mpeg">
+                    </audio></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>英文转中文</h2>
+        <div class="audio-container">
+            <audio controls>
+                <source src="source_audio_en_to_zh.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <audio controls>
+                <source src="target_audio_en_to_zh.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+        <table>
+            <tr>
+                <th>样本1</th>
+                <th>样本2</th>
+                <th>样本3</th>
+                <th>样本4</th>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="en_to_zh_1.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_zh_2.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_zh_3.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_zh_4.mp3" type="audio/mpeg">
+                    </audio></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>中文转中文</h2>
+        <div class="audio-container">
+            <audio controls>
+                <source src="source_audio_zh_to_zh.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <audio controls>
+                <source src="target_audio_zh_to_zh.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+        <table>
+            <tr>
+                <th>样本1</th>
+                <th>样本2</th>
+                <th>样本3</th>
+                <th>样本4</th>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="zh_to_zh_1.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_zh_2.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_zh_3.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="zh_to_zh_4.mp3" type="audio/mpeg">
+                    </audio></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>英文转英文</h2>
+        <div class="audio-container">
+            <audio controls>
+                <source src="source_audio_en_to_en.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <audio controls>
+                <source src="target_audio_en_to_en.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+        </div>
+        <table>
+            <tr>
+                <th>样本1</th>
+                <th>样本2</th>
+                <th>样本3</th>
+                <th>样本4</th>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="en_to_en_1.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_en_2.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_en_3.mp3" type="audio/mpeg">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="en_to_en_4.mp3" type="audio/mpeg">
+                    </audio></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
