@@ -41,7 +41,7 @@
         }
 
         table {
-            width: 80%;
+            width: 100%;
             border-collapse: separate;
             table-layout: fixed;
             margin-top: 10px;
@@ -102,41 +102,39 @@
         <h3>Abstract</h3>
         <p>Cross-lingual voice conversion (XVC) is a technology that modifies speaker identity while preserving
             linguistic content
-            in scenarios where the source and target speakers speak different languages.
-            Previous non-parallel methods based on disentanglement face severe training-testing inconsistency issues in
-            XVC tasks
-            due to language differences and the lack of parallel training data, which compromise the quality of the
-            synthesized
-            speech.
-            In this paper, we propose CASC-XVC, an XVC method with content accordant (CA) and speaker contrastive (SC)
-            losses. This
-            method adopts the framework of FreeVC-s as the backbone. We design a cross-lingual fine-tuning process
-            employing pairs
-            of utterances from speakers in different languages to update the modules used in the inference stage. A
-            content
-            accordant and a speaker contrastive loss are introduced to deal with the lack of true parallel targets in
-            the
-            fine-tuning process.
-            Moreover, we use shared self-supervised learning (SSL) representations across different languages along with
-            information
-            perturbation for clean content disentanglement.
-            Both subjective and objective results on a bilingual (English and Chinese) dataset demonstrate that our
-            approach
-            achieves significant improvements in XVC tasks.</p>
+            in scenarios where the source and target speakers use different languages. Previous non-parallel
+            disentanglement-based
+            methods face severe training-testing inconsistency issues in XVC tasks due to language mismatch and the lack
+            of
+            multilingual parallel data, which inevitably compromise the quality of the synthesized speech. In this
+            paper, we propose
+            CASC-XVC, a zero-shot XVC method incorporating with content accordant (CA) and speaker contrastive (SC)
+            losses.
+            Specifically, this method adopts the framework of FreeVC-s as the backbone. We design a cross-lingual
+            fine-tuning
+            process employing pairs of utterances from speakers in different languages to update the modules used in the
+            inference
+            stage. A CA loss and an SC loss are introduced to deal with the lack of true parallel targets in the
+            fine-tuning
+            process. Moreover, we use shared self-supervised learning (SSL) representations across different languages
+            along with
+            information perturbation for content disentanglement. Both subjective and objective results on a bilingual
+            (English and
+            Chinese) dataset demonstrate that our approach achieves significant improvements in XVC tasks.</p>
     </div>
 
     <div class="table-container">
         <h2>English to Chinese</h2>
         <div class="audio-container">
-            <div class="audio-block">
-                <label>Source</label>
+            <!-- <div class="audio-block">
+                <label>Source: p246</label>
                 <audio controls>
                     <source src="demo/src/p246_119.wav" type="audio/wav">
                     您的浏览器不支持音频播放。
                 </audio>
-            </div>
+            </div> -->
             <div class="audio-block">
-                <label>Target</label>
+                <label>Target: S0005</label>
                 <audio controls>
                     <source src="demo/tar/BAC009S0005W0121.wav" type="audio/wav">
                     您的浏览器不支持音频播放。
@@ -145,12 +143,16 @@
         </div>
         <table>
             <tr>
+                <th>Source: p246</th>
                 <th>CyclePPG-XVC</th>
                 <th>YourTTS</th>
                 <th>AutoCycle-VC</th>
                 <th><b>CASC-XVC (ours)</b></th>
             </tr>
             <tr>
+                <td><audio controls>
+                        <source src="demo/src/p246_119.wav" type="audio/wav">
+                    </audio></td>
                 <td><audio controls>
                         <source src="demo/en2ch/CyclePPG-VC/p246_119-S0005_generated_e2e.wav" type="audio/wav">
                     </audio></td>
@@ -164,29 +166,47 @@
                         <source src="demo/en2ch/proposed/p246_119-BAC009S0005W0121.wav" type="audio/wav">
                     </audio></td>
             </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="demo/src/p246_278.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2ch/CyclePPG-VC/p246_278-S0005_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2ch/Yourtts/p246_278-BAC009S0005W0121.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2ch/Autocycle-VC/p246_278xS0005_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2ch/proposed/p246_278-BAC009S0005W0121.wav" type="audio/wav">
+                    </audio></td>
+            </tr>
         </table>
     </div>
 
     <div class="table-container">
         <h2>Chinese to English</h2>
         <div class="audio-container">
+            <!-- <div class="audio-block">
+                        <label>Source: p246</label>
+                        <audio controls>
+                            <source src="demo/src/p246_119.wav" type="audio/wav">
+                            您的浏览器不支持音频播放。
+                        </audio>
+                    </div> -->
             <div class="audio-block">
-                <label>Source</label>
+                <label>Target: p272</label>
                 <audio controls>
-                    <source src="source_audio_en_to_zh.wav" type="audio/wav">
-                    您的浏览器不支持音频播放。
-                </audio>
-            </div>
-            <div class="audio-block">
-                <label>Target</label>
-                <audio controls>
-                    <source src="target_audio_en_to_zh.wav" type="audio/wav">
+                    <source src="demo/tar/p272_003.wav" type="audio/wav">
                     您的浏览器不支持音频播放。
                 </audio>
             </div>
         </div>
         <table>
             <tr>
+                <th>Source: S0660</th>
                 <th>CyclePPG-XVC</th>
                 <th>YourTTS</th>
                 <th>AutoCycle-VC</th>
@@ -194,16 +214,36 @@
             </tr>
             <tr>
                 <td><audio controls>
-                        <source src="en_to_zh_1.wav" type="audio/wav">
+                        <source src="demo/src/BAC009S0660W0178.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_zh_2.wav" type="audio/wav">
+                        <source src="demo/ch2en/CyclePPG-VC/BAC009S0660W0178-p272_generated_e2e.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_zh_3.wav" type="audio/wav">
+                        <source src="demo/ch2en/Yourtts/BAC009S0660W0178-p272_003.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_zh_4.wav" type="audio/wav">
+                        <source src="demo/ch2en/Autocycle-VC/BAC009S0660W0178-p272_003.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2en/proposed/BAC009S0660W0178-p272_003.wav" type="audio/wav">
+                    </audio></td>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="demo/src/BAC009S0660W0339.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2en/CyclePPG-VC/BAC009S0660W0339-p272_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2en/Yourtts/BAC009S0660W0339-p272_003.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2en/Autocycle-VC/BAC009S0660W0339-p272_003.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2en/proposed/BAC009S0660W0339-p272_003.wav" type="audio/wav">
                     </audio></td>
             </tr>
         </table>
@@ -212,23 +252,24 @@
     <div class="table-container">
         <h2>English to English</h2>
         <div class="audio-container">
+            <!-- <div class="audio-block">
+                        <label>Source: p246</label>
+                        <audio controls>
+                            <source src="demo/src/p246_119.wav" type="audio/wav">
+                            您的浏览器不支持音频播放。
+                        </audio>
+                    </div> -->
             <div class="audio-block">
-                <label>Source</label>
+                <label>Target: p225</label>
                 <audio controls>
-                    <source src="source_audio_zh_to_zh.wav" type="audio/wav">
-                    您的浏览器不支持音频播放。
-                </audio>
-            </div>
-            <div class="audio-block">
-                <label>Target</label>
-                <audio controls>
-                    <source src="target_audio_zh_to_zh.wav" type="audio/wav">
+                    <source src="demo/tar/p225_003.wav" type="audio/wav">
                     您的浏览器不支持音频播放。
                 </audio>
             </div>
         </div>
         <table>
             <tr>
+                <th>Source: p233</th>
                 <th>CyclePPG-XVC</th>
                 <th>YourTTS</th>
                 <th>AutoCycle-VC</th>
@@ -236,16 +277,36 @@
             </tr>
             <tr>
                 <td><audio controls>
-                        <source src="zh_to_zh_1.wav" type="audio/wav">
+                        <source src="demo/src/p233_021.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="zh_to_zh_2.wav" type="audio/wav">
+                        <source src="demo/en2en/CyclePPG-VC/p233_021-p225_generated_e2e.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="zh_to_zh_3.wav" type="audio/wav">
+                        <source src="demo/en2en/Yourtts/p233_021-p225_003.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="zh_to_zh_4.wav" type="audio/wav">
+                        <source src="demo/en2en/Autocycle-VC/p233_021xp225_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2en/proposed/p233_021-p225_003.wav" type="audio/wav">
+                    </audio></td>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="demo/src/p233_053.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2en/CyclePPG-VC/p233_053-p225_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2en/Yourtts/p233_053-p225_003.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2en/Autocycle-VC/p233_053xp225_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/en2en/proposed/p233_053-p225_003.wav" type="audio/wav">
                     </audio></td>
             </tr>
         </table>
@@ -254,23 +315,24 @@
     <div class="table-container">
         <h2>Chinese to Chinese</h2>
         <div class="audio-container">
+            <!-- <div class="audio-block">
+                        <label>Source: p246</label>
+                        <audio controls>
+                            <source src="demo/src/p246_119.wav" type="audio/wav">
+                            您的浏览器不支持音频播放。
+                        </audio>
+                    </div> -->
             <div class="audio-block">
-                <label>Source</label>
+                <label>Target: S0126</label>
                 <audio controls>
-                    <source src="source_audio_en_to_en.wav" type="audio/wav">
-                    您的浏览器不支持音频播放。
-                </audio>
-            </div>
-            <div class="audio-block">
-                <label>Target</label>
-                <audio controls>
-                    <source src="target_audio_en_to_en.wav" type="audio/wav">
+                    <source src="demo/tar/BAC009S0126W0121.wav" type="audio/wav">
                     您的浏览器不支持音频播放。
                 </audio>
             </div>
         </div>
         <table>
             <tr>
+                <th>Source: S0019</th>
                 <th>CyclePPG-XVC</th>
                 <th>YourTTS</th>
                 <th>AutoCycle-VC</th>
@@ -278,16 +340,36 @@
             </tr>
             <tr>
                 <td><audio controls>
-                        <source src="en_to_en_1.wav" type="audio/wav">
+                        <source src="demo/src/BAC009S0019W0121.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_en_2.wav" type="audio/wav">
+                        <source src="demo/ch2ch/CyclePPG-VC/BAC009S0019W0121-S0126_generated_e2e.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_en_3.wav" type="audio/wav">
+                        <source src="demo/ch2ch/Yourtts/BAC009S0019W0121-BAC009S0126W0121.wav" type="audio/wav">
                     </audio></td>
                 <td><audio controls>
-                        <source src="en_to_en_4.wav" type="audio/wav">
+                        <source src="demo/ch2ch/Autocycle-VC/BAC009S0019W0121xS0126_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2ch/proposed/BAC009S0019W0121-BAC009S0126W0121.wav" type="audio/wav">
+                    </audio></td>
+            </tr>
+            <tr>
+                <td><audio controls>
+                        <source src="demo/src/BAC009S0019W0395.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2ch/CyclePPG-VC/BAC009S0019W0395-S0126_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2ch/Yourtts/BAC009S0019W0395-BAC009S0126W0121.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2ch/Autocycle-VC/BAC009S0019W0395xS0126_generated_e2e.wav" type="audio/wav">
+                    </audio></td>
+                <td><audio controls>
+                        <source src="demo/ch2ch/proposed/BAC009S0019W0395-BAC009S0126W0121.wav" type="audio/wav">
                     </audio></td>
             </tr>
         </table>
